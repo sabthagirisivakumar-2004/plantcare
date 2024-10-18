@@ -1,13 +1,22 @@
 import logo from './logo.svg';
-import Signup from "./Autentication/Signup" 
+import Signup from "./Autentication/newuser" 
 import Signin from "./Autentication/Signin"
+import Navi from "./Rout/Naivgator"
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css';
-
 function App() {
   return (
-    <div className="App">
-     <Signin/>
-    </div>
+  <>
+  <BrowserRouter>
+  <Routes>
+  <Route path='/' element={<Signup/>}></Route>
+  <Route path='/Signin' element={<Signin/>}></Route>
+  </Routes>
+  </BrowserRouter>
+  
+  </>
+
+    
   );
 }
 

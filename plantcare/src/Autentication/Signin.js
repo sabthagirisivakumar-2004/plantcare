@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Signin.css"
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 const Signup = () => {
     const [isRegister, setIsRegister] = useState(false);
   const [form, setForm] = useState({  email: "", password: "" });
@@ -9,6 +10,10 @@ const Signup = () => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
+  const navigate=useNavigate();
+  const tosignin = () =>{
+    navigate("/");
+  }
   return (
     <>
     <div className="container" style={{width:"1519px"}}>
@@ -52,7 +57,7 @@ const Signup = () => {
           <button type="submit" className="form-button" onClick="" style={{backgroundColor:"#40744D"}}>
             Signin
           </button>
-          <button type="button"  className="toggle-button" style={{backgroundColor:"black"}}>
+          <button type="button"  className="toggle-button" style={{backgroundColor:"black"}} onClick={tosignin}>
           Don't have an account? Signup
           </button>
         </form>
