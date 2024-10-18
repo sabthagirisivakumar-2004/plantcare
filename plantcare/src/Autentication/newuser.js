@@ -78,7 +78,7 @@ const navigate=useNavigate();
                         <button type="submit" className="form-button" style={{ backgroundColor: "#40744D" }}>
                             Signup
                         </button>
-                        <button type="button" className="toggle-button" style={{ backgroundColor: "black" }}>
+                        <button type="button" onClick={()=>{navigate("/Signin")}} className="toggle-button" style={{ backgroundColor: "black" }}>
                             Already have an account? Login
                         </button>
                     </form>
