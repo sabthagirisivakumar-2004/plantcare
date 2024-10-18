@@ -24,6 +24,12 @@ const Signin = () => {
         }
     };
 
+    // Function to check if username contains specific allowed domains
+    const validateUsernameDomain = (username) => {
+        const allowedDomains = ["@admin.com", "@gmail.com", "@vendor.com"];
+        return allowedDomains.some((domain) => username.endsWith(domain));
+    };
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setForm({ ...form, [name]: value });
@@ -34,11 +40,19 @@ const Signin = () => {
         e.preventDefault();
         setErrors({ username: '', password: '' });
 
-        // Simple validation
+        // Simple validation for empty fields
         if (!form.username || !form.password) {
             setErrors({
                 username: !form.username ? 'Username is required' : '',
                 password: !form.password ? 'Password is required' : ''
+            });
+            return;
+        }
+
+        // Domain validation for username
+        if (!validateUsernameDomain(form.username)) {
+            setErrors({
+                username: 'Username must end with @admin.com, @gmail.com, or @vendor.com'
             });
             return;
         }
