@@ -3,13 +3,18 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Import carousel CSS
 import './Homepage.css'; // Custom CSS for styling
 import PlantCard from "../Pages/plantcards";
+import { useNavigate } from 'react-router-dom';
 const HomePage = () => {
+  const navigate=useNavigate();
+  const TOsearch = ()=>{
+    navigate("/search");
+  }
   return (
     <>
       {/* Header Section */}
       <header className="header">
         <div className="logo">Plantify</div>
-        <div className="search-bar">
+        <div className="search-bar" onClick={TOsearch}>
           <input type="text" placeholder="Search for plants, pots, tools..." />
           <button>Search</button>
         </div>

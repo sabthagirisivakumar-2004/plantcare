@@ -41,7 +41,6 @@ const VendorHomepage = () => {
               style={{width:"60px",height:"60px",borderRadius:"60px",position:"absolute",top:"5px",right:"90px"}}
             />
             <div className="dropdown-content">
-              
             </div>
             </div>
             <a onClick={handle}>Logout</a>
